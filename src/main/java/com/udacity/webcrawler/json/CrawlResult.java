@@ -1,5 +1,8 @@
 package com.udacity.webcrawler.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
