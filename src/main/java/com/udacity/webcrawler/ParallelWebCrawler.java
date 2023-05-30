@@ -7,10 +7,7 @@ import javax.inject.Provider;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
@@ -39,6 +36,9 @@ final class ParallelWebCrawler implements WebCrawler {
 
   @Override
   public CrawlResult crawl(List<String> startingUrls) {
+    Instant deadline = clock.instant().plus(timeout);
+    Map<String, Integer> counts = Collections.synchronizedMap(new HashMap<>());
+    ForkJoinPool pool = new ForkJoinPool();
     return new CrawlResult.Builder().build();
   }
 
